@@ -16,13 +16,13 @@
 <script>
 $(function() {
   $.get('/tasks').success(function(data){
-    $.each(data,function(i, task){
+    for (task in data) {
       $('.todo-list').append(
         $('<li>').append(
-          $('<input class="toggle" type="checkbox"><label>').append(task.title)
+          $('<input class="toggle" type="checkbox"><label>').append(data[task].title)
         )
       )
-    });
+    };
   });
 });
 </script>
