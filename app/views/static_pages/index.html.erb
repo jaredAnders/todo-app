@@ -1,1 +1,28 @@
 <h1>Zenshin</h1>
+
+<section class="todoapp">
+  <header class="header">
+    <h2>Tasks</h2>
+    <input class="new-todo" placeholder="Add a task..." autofocus="">
+  </header>
+  <section class="main">
+
+    <ul class="todo-list">
+    </ul>
+
+  </section>
+</section>
+
+<script>
+$(function() {
+  $.get('/tasks').success(function(data){
+    $.each(data,function(i, task){
+      $('.todo-list').append(
+        $('<li>').append(
+          $('<input class="toggle" type="checkbox"><label>').append(task.title)
+        )
+      )
+    });
+  });
+});
+</script>
