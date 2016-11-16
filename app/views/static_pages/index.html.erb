@@ -17,11 +17,14 @@
 $(function() {
   $.get('/tasks').success(function(data){
     for (task in data) {
-      var doneStatus = data[task].done ? "checked" : "";
       $('.todo-list').append(
         $('<li>').append(
-          $('<input class="toggle" type="checkbox"'
-          + doneStatus +'><label>').append(data[task].title)
+          $('<input>').attr({
+            class: "toggle",
+            type: "checkbox",
+            'data-id': data[task].id,
+            checked: data[task].done
+          }).add($('<label>').append(data[task].title))
         )
       )
     };
