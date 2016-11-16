@@ -20,14 +20,22 @@ $(function() {
       $('.todo-list').append(
         $('<li>').append(
           $('<input>').attr({
-            class: "toggle",
-            type: "checkbox",
+            class: 'toggle',
+            type: 'checkbox',
             'data-id': data[task].id,
             checked: data[task].done
           }).add($('<label>').append(data[task].title))
         )
       )
     };
+
+    $('.toggle').change(function (){
+      var task = $(this);
+      var id = task.data("id");
+      var done = task.prop('checked');
+    });
   });
+
+
 });
 </script>
