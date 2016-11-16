@@ -28,7 +28,8 @@ $(function() {
           }
         },
         success: function(){
-          console.log('success');
+          var status = doneStatus ? "done" : "not done";
+          console.log('marked task '+id+' as '+ status);
         }
       })
     });
