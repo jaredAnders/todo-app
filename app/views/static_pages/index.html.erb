@@ -15,6 +15,7 @@
 
 <script>
 $(function() {
+  //get all tasks and generate list
   $.get('/tasks').success(function(data){
     for (task in data) {
       $('.todo-list').append(
@@ -29,13 +30,25 @@ $(function() {
       )
     };
 
+    //update done status in db on checkbox toggle
     $('.toggle').change(function (){
       var task = $(this);
       var id = task.data("id");
-      var done = task.prop('checked');
+      var doneStatus = task.prop('checked');
+      $.ajax({
+        url: '/tasks/' + id,
+        method: 'PUT',
+        data: {
+          task: {
+            done: doneStatus
+          }
+        },
+        success: function(){
+          console.log('success');
+        }
+      })
     });
   });
-
 
 });
 </script>
