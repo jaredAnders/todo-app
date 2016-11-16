@@ -13,4 +13,16 @@ RSpec.describe TasksController, type: :controller do
     end
   end
 
+  describe "tasks#update action" do
+    it "should successfuly update tasks in the db" do
+      task = FactoryGirl.create(:task)
+      put :update, id: task.id, task: {done: true}
+      expect(response).to have_http_status :success
+
+      task.reload
+      expect(task.done).to eq(true)
+    end
+
+  end
+
 end
