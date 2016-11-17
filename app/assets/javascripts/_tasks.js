@@ -3,13 +3,14 @@ $(function() {
   //generate task with attributes
   function generateTask (task){
     $('.todo-list').append(
-      $('<li>').append(
+      $('<li>').addClass('collection-item').append(
         $('<input>').attr({
           class: 'toggle',
-          type: 'checkbox',
+          id: task.id,
           'data-id': task.id,
+          type: 'checkbox',
           checked: task.done
-        }).add($('<label>').append(task.title))
+        }).add($('<label>').attr({for: task.id}).append(task.title))
       )
     )
   };
@@ -52,5 +53,5 @@ $(function() {
       $('.new-task').val('');
     });
   });
-  
+
 });
