@@ -1,10 +1,4 @@
 $(function() {
-  $('#new-task-form').submit(function(event){
-    event.preventDefault();
-    var task = $('.new-task').val();
-    console.log(task);
-    $('.new-task').val('');
-  });
 
   //generate task with attributes
   function generateTask (task){
@@ -19,6 +13,7 @@ $(function() {
       )
     )
   };
+
   //update done status in db on checkbox toggle
   function updateDoneStatus (){
     var task = $(this);
@@ -34,6 +29,7 @@ $(function() {
       }
     })
   };
+
   //get all tasks
   $.get('/tasks').success(function(data){
     //generate list
@@ -43,4 +39,18 @@ $(function() {
     //enable status update
     $('.toggle').change(updateDoneStatus);
   });
+
+  //add new tasks
+  $('#new-task-form').submit(function(event){
+    //prevent refresh and extract input value
+    event.preventDefault();
+    var newTask = {task: {title: $('.new-task').val()}};
+    //post new task, add task to view and reset input value
+    $.post('/tasks', newTask ).success(function(data){
+      generateTask(data);
+      $('.toggle').change(updateDoneStatus);
+      $('.new-task').val('');
+    });
+  });
+  
 });
