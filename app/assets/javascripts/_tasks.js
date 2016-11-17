@@ -1,4 +1,11 @@
 $(function() {
+  $('#new-task-form').submit(function(event){
+    event.preventDefault();
+    var task = $('.new-task').val();
+    console.log(task);
+    $('.new-task').val('');
+  });
+
   //generate task with attributes
   function generateTask (task){
     $('.todo-list').append(
