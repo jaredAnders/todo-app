@@ -1,15 +1,17 @@
 class TasksController < ApplicationController
+  before_action :authenticate_user!
+
   def index
-    render json: Task.all.order(:id)
+    render json: current_user.tasks.all.order(:id)
   end
 
   def create
-    task = Task.create(task_params)
+    task = current_user.tasks.create(task_params)
     render json: task
   end
 
   def update
-    task = Task.find(params[:id])
+    task = current_user.tasks.find(params[:id])
     task.update_attributes(task_params)
     render json: task
   end
