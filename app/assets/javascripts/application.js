@@ -15,3 +15,7 @@
 //= require materialize
 //= require_tree .
 //= require tasks
+
+$(function(){
+  $('.button-collapse').sideNav();
+});
