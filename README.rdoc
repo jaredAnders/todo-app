@@ -1,28 +1,13 @@
-== README
+= Zenshin
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Zenshin is a Todo SPA built using Rails 4.1.9 and jQuery 1.11.1 to fulfill part of the {Firehose Project}[https://www.thefirehoseproject.com/] curriculum. The primary focus of this project was learning how to set up a Rails API controller and consume it via Ajax requests.
 
-Things you may want to cover:
+== Concepts/Technologies explored
+* Render JSON from Rails controller
+* Consume API via Ajax
 
-* Ruby version
+== TODO
+* Load scripts on index page only
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+== Notes
+This is the first version of Zenshin. Next, I plan on rebuilding with React[https://facebook.github.io/react/] using the {react-rails}[https://github.com/reactjs/react-rails] gem. Following that, I will build a React app hosted on GitHub Pages that consumes data from a rails API hosted on Heroku.

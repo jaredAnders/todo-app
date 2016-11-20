@@ -1,0 +1,10 @@
+Sun, 20 Nov 2016 18:40:42 +0000
+README.rdoc	Sun, 20 Nov 2016 18:40:39 +0000
+app/controllers/application_controller.rb	Mon, 14 Nov 2016 21:10:09 +0000
+app/controllers/static_pages_controller.rb	Sat, 19 Nov 2016 17:01:53 +0000
+app/controllers/tasks_controller.rb	Sat, 19 Nov 2016 17:08:19 +0000
+app/helpers/application_helper.rb	Mon, 14 Nov 2016 21:10:09 +0000
+app/helpers/static_pages_helper.rb	Tue, 15 Nov 2016 14:03:55 +0000
+app/helpers/tasks_helper.rb	Tue, 15 Nov 2016 14:46:42 +0000
+app/models/task.rb	Sat, 19 Nov 2016 17:06:51 +0000
+app/models/user.rb	Sat, 19 Nov 2016 17:06:40 +0000
