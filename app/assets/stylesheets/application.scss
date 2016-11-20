@@ -2,3 +2,7 @@
  $primary-color: color("green", "darken-1") !default;
  $secondary-color: color("yellow", "darken-2") !default;
  @import 'materialize','https://fonts.googleapis.com/icon?family=Material+Icons';
+
+ input, select, textarea {
+     font-size: 16px;
+ }
