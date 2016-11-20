@@ -31,27 +31,35 @@ $(function() {
     })
   };
 
+  function displayEmptyState (){
+    //hide todo-list
+    $('.todo-list').hide();
+    //show empty state
+    $('.main').append(
+      $('<div>').attr({
+        id: 'empty-state',
+        class: 'center'
+      }).append(
+        $('<br><img src="assets/scream.jpg" class="responsive-img" />').add(
+          $('<p>').append("<b>You haven't added any tasks yet</b>").add(
+            $('<p>').append("Use the field above to get started")
+          )
+        )
+      )
+    );
+    //hide empty state and show list when new task submitted
+    $('#new-task-form').submit(function(){
+      $('#empty-state').fadeOut("fast", function(){
+        $('.todo-list').fadeIn("fast");
+      });
+    });
+  };
+
   //get all tasks
   $.get('/tasks').success(function(data){
     //if no tasks, show empty state
     if (data.length == 0) {
-      console.log(data)
-      $('.todo-list').append(
-        $('<div>').attr({
-          id: 'empty-state',
-          class: 'center'
-        }).append(
-          $('<br><img src="assets/scream.jpg" />').add(
-            $('<p>').append("<b>You haven't added any tasks yet</b>").add(
-              $('<p>').append("Use the field above to get started")
-            )
-          )
-        )
-      );
-      //$('#empty-state').show();
-      $('#new-task-form').submit(function(){
-        $('#empty-state').slideUp();
-      })
+      displayEmptyState()
     };
     //generate list
     for (task in data) {
