@@ -7,6 +7,7 @@ Zenshin is a Todo SPA built using Rails 4.1.9 and jQuery 1.11.1 to fulfill part 
 * Consume API via Ajax
 
 == TODO
+* Add landing page for unauthenticated visitors
 * Load scripts on index page only
 
 == Notes
