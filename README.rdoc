@@ -9,6 +9,7 @@ Zenshin is a Todo SPA built using Rails 4.1.9 and jQuery 1.11.1 to fulfill part 
 == TODO
 * Add landing page for unauthenticated visitors
 * Load scripts on index page only
+* Hide/move completed tasks
 
 == Notes
 This is the first version of Zenshin. Next, I plan on rebuilding with React[https://facebook.github.io/react/] using the {react-rails}[https://github.com/reactjs/react-rails] gem. Following that, I will build a React app hosted on GitHub Pages that consumes data from a rails API hosted on Heroku.
