@@ -1,10 +1,12 @@
 = Zenshin
 
-Zenshin is a Todo SPA built using Rails 4.1.9 and jQuery 1.11.1 to fulfill part of the {Firehose Project}[https://www.thefirehoseproject.com/] curriculum. The primary focus of this project was learning how to set up a Rails API controller and consume it via Ajax requests.
+Zenshin is a Todo SPA built using Rails 4 & jQuery.
+
+https://s3.amazonaws.com/poly-screenshots.angel.co/Project/b7/452216/1d96d2fb169fb38dcca59c1702bb97a3-original.png
 
 == Concepts/Technologies explored
 * Render JSON from Rails controller
-* Consume API via Ajax
+* Consume API via AJAX
 
 == TODO
 * Add landing page for unauthenticated visitors
